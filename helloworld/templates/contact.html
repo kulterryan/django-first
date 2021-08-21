@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block title %} Contact {% endblock title %} 
+
+{% block body %}
+
+<div class="container-fluid mx-10 mb-5 px-0">
+  <img
+    src="/static/img/4.jpg" class="d-block my-0 px-0 w-100" alt=""/>
+  <h1 class="text-center my-3">Contact Us</h1>
+
+  <div class="container w-50">
+    <form method="POST" action="/contact">
+    {% csrf_token %}
+      <div class="mb-3">
+        <label for="email" class="form-label">Name</label>
+        <input type="text" class="form-control" id="name" name="name" aria-describedby="emailHelp" placeholder="Example Doe"/>
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email address</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" name="email" aria-describedby="emailHelp" placeholder="me@aryn.tech"/>
+      </div>
+      <div class="mb-3">
+        <label for="phone" class="form-label">Telephone</label>
+        <input type="tel" class="form-control" id="phone" name="phone" placeholder="+917979797979" />
+      </div>
+      <div class="mb-3">
+        <label for="msg" class="form-label">Message</label>
+        <input type="text" class="form-control" id="message" name="msg" placeholder="Your Message."/>
+      </div>
+      <div class="mb-3 form-check">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1" />
+        <label class="form-check-label" for="exampleCheck1">Blah Blah Conditions</label>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+</div>
+
+
+{% endblock body %}
